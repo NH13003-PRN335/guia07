@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:p="http://primefaces.org/ui">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+        <cc:attribute name="baking" class="sv.edu.uesocc.ingenieria.prn335_2017.web.controladores.TipoPasoBean" required="true" >
+            
+        </cc:attribute>
+            
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+
+        <p:commandButton value="Crear" icon="ui-icon-disk"
+                         validateClient="true" ajax="true"
+                         update=":tabla_datos :frm_detalle:formulario "
+                         rendered="#{cc.attrs.baking.btnadd}"
+                         actionListener="#{cc.attrs.baking.guardarRegistro()}"/>
+       <!-- TRABAJO SOLO BOTONES-->
+
+        <p:commandButton value="Cancelar" icon="ui-icon-cancel"
+                         validateClient="true" ajax="true"
+                         update=":tabla_datos :frm_detalle:formulario "
+                         disabled="false" resetValues="true"
+                         actionListener="#{cc.attrs.baking.cancelar()}"
+                         immediate="true"/>
+
+        <p:commandButton value="Eliminar" icon="ui-icon-trash"
+                         validateClient="true" ajax="true"
+                         update=":tabla_datos :frm_detalle:formulario "
+                         rendered="#{cc.attrs.baking.botones}"
+                         actionListener="#{cc.attrs.baking.Eliminar()}"/>
+
+        <p:commandButton value="Editar" icon="ui-icon-pencil"
+                         validateClient="true" ajax="true"
+                         update=":tabla_datos :frm_detalle:formulario "
+                         rendered="#{cc.attrs.baking.botones}"
+                         actionListener="#{cc.attrs.baking.Modificar()}"/>
+
+
+
+    </cc:implementation>
+   
+</html>

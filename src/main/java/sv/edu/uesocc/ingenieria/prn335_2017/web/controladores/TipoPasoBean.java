@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sv.edu.uesocc.ingenieria.prn335_2017.web.controladores;
 
 import java.io.Serializable;
@@ -21,10 +17,7 @@ import sv.edu.uesocc.ingenieria.prn335_2017.datos.acceso.TipoPasoFacadeLocal;
 import sv.edu.uesocc.ingenieria.prn335_2017.datos.definiciones.TipoPaso;
 
 
-/**
- *
- * @author ed
- */
+
 @Named(value = "tipoPasoBean")
 @ViewScoped
 public class TipoPasoBean implements Serializable {
@@ -83,7 +76,7 @@ public class TipoPasoBean implements Serializable {
                             
                         }
                     } catch (Exception e) {
-                        Logger.getLogger(getClass().getName()).log(Level.SEVERE, e.getMessage(), e);
+                Logger.getLogger(getClass().getName()).log(Level.SEVERE, e.getMessage(), e);
                     }
                     return salida;
                 }

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:p="http://primefaces.org/ui">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+        <cc:attribute name="compo" type="sv.edu.uesocc.ingenieria.prn335_2017.web.controladores.TipoPasoBean" required="true"> </cc:attribute>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        <p:panel visible="#{tipoPasoBean.seleccions}">
+            <p:commandButton value="#{msg['generador.agregar']}" actionListener="#{cc.attrs.compo.guardarRegistro()}" update="all"
+        </p:panel>
+        
+        
+    </cc:implementation>
+</html>

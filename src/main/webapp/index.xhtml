@@ -3,7 +3,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui" xmlns:botones="http://xmlns.jcp.org/jsf/composite/composite">
 
      <f:view contentType="text/html">
         <h:head>
@@ -16,7 +16,7 @@
         <h:body>
                 <f:view>
             <h:form id="tabla_datos">
-                <h1 align="left"><h:outputText value="Tipo paso"/></h1>
+                <h1 align="left"><h:outputText value="#{gen['caracteristica.titulo']}"/></h1>
                 
                 <p:dataTable value="#{tipoPasoBean.modelo}"
                      var="reg"
@@ -93,34 +93,7 @@
                <p:toolbar id="btns">
                 <f:facet name="left">
                     
-            
-                     <p:commandButton value="Crear" icon="ui-icon-disk"
-                                     validateClient="true" ajax="true"
-                                     update=":tabla_datos frm_detalle:formulario "
-                                     rendered="#{tipoPasoBean.btnadd}"
-                                     actionListener="#{tipoPasoBean.guardarRegistro()}"/>
-
-                    <p:commandButton value="Cancelar" icon="ui-icon-cancel"
-                                     validateClient="true" ajax="true"
-                                     update=":tabla_datos frm_detalle:formulario "
-                                     disabled="false" resetValues="true"
-                                     actionListener="#{tipoPasoBean.cancelar()}"
-                                     immediate="true"/>
-                                     
-                  <p:commandButton value="Eliminar" icon="ui-icon-trash"
-                                     validateClient="true" ajax="true"
-                                     update=":tabla_datos frm_detalle:formulario "
-                                     rendered="#{tipoPasoBean.botones}"
-                                     actionListener="#{tipoPasoBean.Eliminar()}"/>
-                    
-                    <p:commandButton value="Editar" icon="ui-icon-pencil"
-                                     validateClient="true" ajax="true"
-                                     update=":tabla_datos frm_detalle:formulario "
-                                     rendered="#{tipoPasoBean.botones}"
-                                     actionListener="#{tipoPasoBean.Modificar()}"/>
-                   
-                    
-                    
+                    <botones:compositebotones baking="#{tipoPasoBean}"/>
                   
            </f:facet>
              </p:toolbar>
